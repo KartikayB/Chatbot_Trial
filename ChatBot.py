@@ -35,7 +35,7 @@ with open("data_file.json", "w") as write_file:
 
 # ## Functions For Input And Output 
 
-# In[1]:
+# In[40]:
 
 
 def values(ques,dicti):
@@ -61,7 +61,7 @@ def values(ques,dicti):
 # ## Preprocessing
 # ### Need to be executed only once
 
-# In[2]:
+# In[41]:
 
 
 def preprocessing(): 
@@ -82,7 +82,7 @@ def preprocessing():
 
 # ## Need To Run Every Time The Response Is Reqired
 
-# In[19]:
+# In[42]:
 
 
 def calculate(ques):
@@ -100,13 +100,13 @@ def calculate(ques):
 
 # ## Execute Beforehand
 
-# In[30]:
+# In[47]:
 
 
 def clicked():
     a=messageWindow.get("1.0",END)
     messageWindow.delete("1.0",END)
-    chatWindow.insert(END ,"User : "+a)
+    chatWindow.insert(END ,"User : "+a.strip()+"\n")
     response=calculate(a.strip())
     chatWindow.insert(END ,"Response : "+response+"\n")
     chatWindow.insert(END , "\n")
@@ -116,7 +116,7 @@ def clicked():
 
 # ## TKinter GUI
 
-# In[ ]:
+# In[48]:
 
 
 dic,result_index,predata=preprocessing()
